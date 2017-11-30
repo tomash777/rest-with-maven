@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="RestWithMaven:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="RestWithMaven.war">
+      <element id="artifact" artifact-name="RestWithMaven:war exploded" />
+    </root>
+  </artifact>
+</component>
