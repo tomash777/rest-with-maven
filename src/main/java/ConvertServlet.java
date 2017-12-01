@@ -25,25 +25,25 @@ public class ConvertServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-        String  type = req.getParameter("type");
-        int j = Integer.parseInt(req.getParameter("number"));
+        String type = req.getParameter("type");
+        String number = req.getParameter("number");
 
         PrintWriter out1 = res.getWriter();
 
-
-        if(type.equals("Roman")){
-            String convertedNumber = romanTarget
-                    .resolveTemplate("number",j)
-                    .request().get(String.class);
+        if(type.equals("roman")){
+            Response response = romanTarget
+                    .resolveTemplate("number",number)
+                    .request().get(Response.class);
+            String convertedNumber = response.readEntity(String.class);
             out1.println(convertedNumber);
 
         }
 
         else {
-            String number = hexadecimalTarget
-                    .resolveTemplate("number",j)
+            String convertedNumber = hexadecimalTarget
+                    .resolveTemplate("number",number)
                     .request().get(String.class);
-            out1.println(number);
+            out1.println(convertedNumber);
         }
 
     }
