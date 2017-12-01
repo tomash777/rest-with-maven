@@ -40,9 +40,10 @@ public class ConvertServlet extends HttpServlet {
         }
 
         else {
-            String convertedNumber = hexadecimalTarget
+            Response response = hexadecimalTarget
                     .resolveTemplate("number",number)
-                    .request().get(String.class);
+                    .request().get(Response.class);
+            String convertedNumber = response.readEntity(String.class);
             out1.println(convertedNumber);
         }
 

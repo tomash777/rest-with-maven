@@ -9,7 +9,6 @@ import javax.ws.rs.core.Response;
 
 @Path("/roman")
 public class RomanNumberResource {
-    private String romanNumber;
 
     public static boolean isInteger(String s) {
         if(s.length() == 0) return false;
@@ -39,7 +38,7 @@ public class RomanNumberResource {
 
         else {
             //String message = "The argument you have provided is not an integer number!";
-            String message = "not";
+            String message = "Not a number!";
             return Response.status(Response.Status.FORBIDDEN)
                     .entity(message)
                     .build();
