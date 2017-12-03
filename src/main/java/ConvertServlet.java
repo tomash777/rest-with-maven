@@ -25,6 +25,7 @@ public class ConvertServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+        /*
         String type = req.getParameter("type");
         String number = req.getParameter("number");
 
@@ -46,6 +47,9 @@ public class ConvertServlet extends HttpServlet {
             String convertedNumber = response.readEntity(String.class);
             out1.println(convertedNumber);
         }
+        */
+        PrintWriter out1 = res.getWriter();
+        out1.println("Chuj");
 
     }
 }
